@@ -14,16 +14,18 @@ namespace Playlite_db
         protected string _user_email;
         protected string _user_uid;
         protected string _user_password;
+        protected bool _user_admin;
         #endregion
         #region Constructors
         public Users() { }
-        public Users(string user_first, string user_last, string user_email, string user_uid, string user_password)
+        public Users(string user_first, string user_last, string user_email, string user_uid, string user_password, bool user_admin)
         {
             this._user_first=user_first;
             this._user_last=user_last;
             this._user_email=user_email;
             this._user_uid=user_uid;
             this._user_password=user_password;
+            this._user_admin=user_admin;
         }
         #endregion
         #region Public Properties
@@ -56,6 +58,11 @@ namespace Playlite_db
         {
             get {return _user_password;}
             set {_user_password=value;}
+        }
+        public virtual bool User_admin
+        {
+            get {return _user_admin;}
+            set {_user_admin=value;}
         }
         #endregion
     }
